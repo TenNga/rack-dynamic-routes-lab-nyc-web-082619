@@ -12,13 +12,15 @@ class Application
       if  item = @@items.find do |item|
           item.name == item_name
         end
+        
         resp.write item.price 
+        
       else
+        
         resp.status = 400
         resp.write "Item not found"
+        
       end
-      
-      
       
     else 
       resp.status = 404
